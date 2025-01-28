@@ -1,0 +1,20 @@
+const Statistics = ({ good, neutral, bad }) => {
+  const total = good + neutral + bad;
+  const average = total > 0 ? (good - bad) / total : 0;
+  const positivePercentage = total > 0 ? (good / total) * 100 : 0;
+
+  return total === 0 ? (
+    <p>No feedback given</p>
+  ) : (
+    <div>
+      <p>Good: {good}</p>
+      <p>Neutral: {neutral}</p>
+      <p>Bad: {bad}</p>
+      <p>Total: {total}</p>
+      <p>Average: {average.toFixed(2)}</p>
+      <p>Positive feedback: {positivePercentage.toFixed(2)}%</p>
+    </div>
+  );
+};
+
+export default Statistics;
